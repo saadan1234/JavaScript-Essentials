@@ -47,6 +47,16 @@ const books = [
 const fBook = books.filter(book=>book.pages>=270);
 fBook;
 
-// Callback function calls all the books
+const tBook = books.filter(book=>book.pages>=270).map(book => book.pages);
+tBook;
+
+// Callback function calls all the books and then reduces all values to one.
 const allPages = fBook.reduce((acc,book)=>acc + book.pages,0);
 allPages;
+
+//Sort Method:
+const sortedPages = tBook.sort((a,b) => b-a)
+sortedPages;
+
+const sortedBooks = sortedPages.map(pageCount => {return books.find(book => book.pages === pageCount).title});
+sortedBooks;
