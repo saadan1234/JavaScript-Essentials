@@ -60,3 +60,19 @@ sortedPages;
 
 const sortedBooks = sortedPages.map(pageCount => {return books.find(book => book.pages === pageCount).title});
 sortedBooks;
+
+// Array Manipulation
+
+//Adding New Value:
+sortedBooks.push('Dune 3');
+sortedBooks;
+const newSortedBooks = [...sortedBooks, "Dune 4"];
+newSortedBooks;
+
+//Deleting New Value:
+const deleteSortedBooks = newSortedBooks.filter(book => book !== "Dune 3");
+deleteSortedBooks;
+
+//Updating Book: Use map function first filtering the book you want to update then updating the value using ternanry operator.
+const updatedBooks = deleteSortedBooks.map(book => (book==='1984') ? "1964": book);
+updatedBooks;
